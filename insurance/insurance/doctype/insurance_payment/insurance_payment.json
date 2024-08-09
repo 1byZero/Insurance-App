@@ -1,0 +1,121 @@
+{
+ "actions": [
+  {
+   "action": "/app/payment-entry/new-payment-entry",
+   "action_type": "Route",
+   "label": "Pay Co Payment"
+  }
+ ],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-08-07 16:02:39.541371",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_xxxo",
+  "naming_series",
+  "patient",
+  "patient_name",
+  "insurance_policy",
+  "amended_from",
+  "column_break_sguu",
+  "policy_number",
+  "amount_insured",
+  "co_payment_amount",
+  "insurance_company_charges"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_xxxo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "label": "Patient",
+   "options": "Patient"
+  },
+  {
+   "fetch_from": "patient.patient_name",
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient Name"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Insurance Payment",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "Insurance-Payment-.YYYY.-"
+  },
+  {
+   "fetch_from": "patient.custom_insurance_policy",
+   "fieldname": "insurance_policy",
+   "fieldtype": "Data",
+   "label": "Insurance Policy"
+  },
+  {
+   "fetch_from": "patient.custom_policy_number",
+   "fieldname": "policy_number",
+   "fieldtype": "Data",
+   "label": "Policy Number"
+  },
+  {
+   "fetch_from": "patient.custom_covered_amount",
+   "fieldname": "amount_insured",
+   "fieldtype": "Data",
+   "label": "Amount Insured"
+  },
+  {
+   "fetch_from": "patient.custom_copayment_amount",
+   "fieldname": "co_payment_amount",
+   "fieldtype": "Data",
+   "label": "Co Payment Amount"
+  },
+  {
+   "fieldname": "column_break_sguu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "insurance_company_charges",
+   "fieldtype": "Data",
+   "label": "Insurance Company Charges"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-08-08 11:17:46.910673",
+ "modified_by": "Administrator",
+ "module": "Insurance",
+ "name": "Insurance Payment",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
