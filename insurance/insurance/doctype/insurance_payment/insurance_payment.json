@@ -4,6 +4,11 @@
    "action": "/app/payment-entry/new-payment-entry",
    "action_type": "Route",
    "label": "Pay Co Payment"
+  },
+  {
+   "action": "/app/payment-entry/new-payment-entry",
+   "action_type": "Route",
+   "label": "Pay Additional Charges"
   }
  ],
  "allow_rename": 1,
@@ -89,7 +94,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-12 11:29:36.063554",
+ "modified": "2024-08-12 12:16:35.204669",
  "modified_by": "Administrator",
  "module": "Insurance",
  "name": "Insurance Payment",
