@@ -14,32 +14,19 @@
  "field_order": [
   "section_break_xxxo",
   "naming_series",
-  "patient",
-  "patient_name",
+  "select_patient",
   "insurance_policy",
   "amended_from",
   "column_break_sguu",
   "policy_number",
   "amount_insured",
   "co_payment_amount",
-  "insurance_company_charges"
+  "insurance_additional_charges"
  ],
  "fields": [
   {
    "fieldname": "section_break_xxxo",
    "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "patient",
-   "fieldtype": "Link",
-   "label": "Patient",
-   "options": "Patient"
-  },
-  {
-   "fetch_from": "patient.patient_name",
-   "fieldname": "patient_name",
-   "fieldtype": "Data",
-   "label": "Patient Name"
   },
   {
    "fieldname": "amended_from",
@@ -58,25 +45,25 @@
    "options": "Insurance-Payment-.YYYY.-"
   },
   {
-   "fetch_from": "patient.custom_insurance_policy",
+   "fetch_from": "select_patient.policy_name",
    "fieldname": "insurance_policy",
    "fieldtype": "Data",
    "label": "Insurance Policy"
   },
   {
-   "fetch_from": "patient.custom_policy_number",
+   "fetch_from": "select_patient.policy_number",
    "fieldname": "policy_number",
    "fieldtype": "Data",
    "label": "Policy Number"
   },
   {
-   "fetch_from": "patient.custom_covered_amount",
+   "fetch_from": "select_patient.amount_insured",
    "fieldname": "amount_insured",
    "fieldtype": "Data",
    "label": "Amount Insured"
   },
   {
-   "fetch_from": "patient.custom_copayment_amount",
+   "fetch_from": "select_patient.co_payment_amount",
    "fieldname": "co_payment_amount",
    "fieldtype": "Data",
    "label": "Co Payment Amount"
@@ -86,15 +73,23 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "insurance_company_charges",
+   "fetch_from": "policy_owner_name.patient_name",
+   "fieldname": "select_patient",
+   "fieldtype": "Link",
+   "label": "Select Patient",
+   "options": "Insurance Policy"
+  },
+  {
+   "fetch_from": "select_patient.insurance_additional_charges",
+   "fieldname": "insurance_additional_charges",
    "fieldtype": "Data",
-   "label": "Insurance Company Charges"
+   "label": "Insurance Additional Charges"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-08 11:17:46.910673",
+ "modified": "2024-08-12 11:29:36.063554",
  "modified_by": "Administrator",
  "module": "Insurance",
  "name": "Insurance Payment",
