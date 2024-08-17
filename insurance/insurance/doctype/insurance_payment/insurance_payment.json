@@ -19,12 +19,13 @@
  "field_order": [
   "section_break_xxxo",
   "naming_series",
-  "select_patient",
   "insurance_policy",
+  "patient_name",
+  "sales_invoice",
   "amended_from",
   "column_break_sguu",
   "policy_number",
-  "amount_insured",
+  "insured_amount",
   "co_payment_amount",
   "insurance_additional_charges"
  ],
@@ -50,51 +51,56 @@
    "options": "Insurance-Payment-.YYYY.-"
   },
   {
-   "fetch_from": "select_patient.policy_name",
-   "fieldname": "insurance_policy",
-   "fieldtype": "Data",
-   "label": "Insurance Policy"
-  },
-  {
-   "fetch_from": "select_patient.policy_number",
+   "fetch_from": "sales_invoice.custom_policy_number",
    "fieldname": "policy_number",
    "fieldtype": "Data",
    "label": "Policy Number"
-  },
-  {
-   "fetch_from": "select_patient.amount_insured",
-   "fieldname": "amount_insured",
-   "fieldtype": "Data",
-   "label": "Amount Insured"
-  },
-  {
-   "fetch_from": "select_patient.co_payment_amount",
-   "fieldname": "co_payment_amount",
-   "fieldtype": "Data",
-   "label": "Co Payment Amount"
   },
   {
    "fieldname": "column_break_sguu",
    "fieldtype": "Column Break"
   },
   {
-   "fetch_from": "policy_owner_name.patient_name",
-   "fieldname": "select_patient",
-   "fieldtype": "Link",
-   "label": "Select Patient",
-   "options": "Insurance Policy"
-  },
-  {
-   "fetch_from": "select_patient.insurance_additional_charges",
+   "fetch_from": "sales_invoice.custom_additional_insurance_charges",
    "fieldname": "insurance_additional_charges",
    "fieldtype": "Data",
    "label": "Insurance Additional Charges"
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "label": "Sales Invoice",
+   "options": "Sales Invoice"
+  },
+  {
+   "fetch_from": "sales_invoice.patient_name",
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient Name "
+  },
+  {
+   "fetch_from": "sales_invoice.custom_insured_amount",
+   "fieldname": "insured_amount",
+   "fieldtype": "Data",
+   "label": "Insured Amount"
+  },
+  {
+   "fetch_from": "sales_invoice.custom_co_payment_amount",
+   "fieldname": "co_payment_amount",
+   "fieldtype": "Data",
+   "label": "Co Payment Amount"
+  },
+  {
+   "fetch_from": "sales_invoice.custom_insurance_policy",
+   "fieldname": "insurance_policy",
+   "fieldtype": "Data",
+   "label": "Insurance Policy"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-12 12:16:35.204669",
+ "modified": "2024-08-17 17:40:33.747613",
  "modified_by": "Administrator",
  "module": "Insurance",
  "name": "Insurance Payment",
